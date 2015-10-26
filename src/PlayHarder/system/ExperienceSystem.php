@@ -13,7 +13,7 @@ use pocketmine\entity\Entity;
 use PlayHarder\ExperienceOrb;
 
 class ExperienceSystem {
-	public static function dropExpOrb(Position $source, $exp = 1, Vector3 $motion = \null, $delay = 40) {
+	public static function dropExpOrb(Position $source, $exp = 1, Vector3 $motion = 1, $delay = 40) {
 		$motion = $motion === \null ? new Vector3 ( \lcg_value () * 0.2 - 0.1, 0.4, \lcg_value () * 0.2 - 0.1 ) : $motion;
 		$entity = Entity::createEntity ( "ExperienceOrb", $source->getLevel ()->getChunk ( $source->getX () >> 4, $source->getZ () >> 4, \true ), new CompoundTag ( "", [ 
 				"Pos" => new ListTag ( "Pos", [ 
